@@ -393,6 +393,10 @@ export default class RichTextEditor extends Component {
     this._sendAction(actions.setBold);
   }
 
+  fontSize(size){
+    this._sendAction(actions.fontSize,size)
+  }
+  
   setItalic() {
     this._sendAction(actions.setItalic);
   }

@@ -1089,6 +1089,14 @@
 				}
 			};
 
+			zss_editor.setFontSize = function (em) {
+				document.execCommand("styleWithCSS", null, true);
+				document.execCommand('fontsize', true, '12px');
+				jQuery.find('[style*="font-size: -webkit-xxx-large"],font[size]').css("font-size", `${em}px`)
+				document.execCommand("styleWithCSS", null, false);
+				zss_editor.enabledEditingItems();
+			}
+
 			zss_editor.setBold = function() {
 				document.execCommand('bold', false, null);
 				zss_editor.enabledEditingItems();
